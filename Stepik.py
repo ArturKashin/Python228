@@ -672,13 +672,17 @@
 #         tot.append(i)
 # print(len(tot))
 
-lst = [-2, 3, 8, -11, -4, 6]
+# lst = [-2, 3, 8, -11, -4, 6]
+#
+# def below_zero(spis):
+#     count = 0
+#     for i in spis:
+#         if i < 0:
+#             count += 1
+#     return count
+#
+# print(below_zero(lst))
 
-def below_zero(spis):
-    count = 0
-    for i in spis:
-        if i < 0:
-            count += 1
-    return count
 
-print(below_zero(lst))
+print('Hello')
+
