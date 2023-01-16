@@ -18,7 +18,10 @@
 #
 #     def __add__(self, other):
 #         if self.sex == other.sex:
-#             print('Невозможно разводить котят с родителями одинаковых полов')
+#             raise ValueError('Невозможно разводить котят с родителями одинаковых полов')
+#
+#         if self.age < 1 or other.age < 1:
+#             raise ValueError('Возраст котят меньше года')
 #         else:
 #             list_cats = []
 #             for i in range(random.randint(1, 5)):
@@ -31,7 +34,8 @@
 # cat2 = Cat('Elsa', 4, 'F')
 # print(cat2)
 # cat3 = cat1 + cat2
-# print(cat3)
+# for i in cat3:
+#     print(i.__dict__, end=' ')
 
 
 # Создать класс Shape и три дочерних класса: Square, Rectangle, Triangle
@@ -141,7 +145,3 @@
 # list_shapes = [Square(3, 'red'), Rectangle(3, 7, 'green'), Triangle(11, 6, 6, 'yellow')]
 # for i in list_shapes:
 #     i.print_info()
-
-
-
-
