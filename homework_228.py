@@ -16,10 +16,12 @@
 #             sex = 'boy'
 #         return f"{self.name} is good {sex}!!!"
 #
+#     def __repr__(self):
+#         return f"Cat(name='{self.name}', age='{self.age}', sex='{self.sex}')"
+#
 #     def __add__(self, other):
 #         if self.sex == other.sex:
 #             raise ValueError('Невозможно разводить котят с родителями одинаковых полов')
-#
 #         if self.age < 1 or other.age < 1:
 #             raise ValueError('Возраст котят меньше года')
 #         else:
@@ -34,8 +36,7 @@
 # cat2 = Cat('Elsa', 4, 'F')
 # print(cat2)
 # cat3 = cat1 + cat2
-# for i in cat3:
-#     print(i.__dict__, end=' ')
+# print(cat3)
 
 
 # Создать класс Shape и три дочерних класса: Square, Rectangle, Triangle
@@ -145,3 +146,72 @@
 # list_shapes = [Square(3, 'red'), Rectangle(3, 7, 'green'), Triangle(11, 6, 6, 'yellow')]
 # for i in list_shapes:
 #     i.print_info()
+
+
+# Создать класс Power, который будет декорировать функцию. Функция возвращает результат умножения двух чисел
+# (a = 2, b = 2), а класс возводит их в степень, которую принимает декоратор.
+
+
+# class Power:
+#     def __init__(self, arg):
+#         self.arg = arg
+#
+#     def __call__(self, function):
+#         def wrap(*args, **kwargs):
+#             res = function(*args, **kwargs)
+#             return res ** self.arg
+#         return wrap
+#
+#
+# @Power(3)
+# def multiplication(a, b):
+#     return a * b
+#
+#
+# print(multiplication(2, 2))
+
+
+
+# Создать класс "Треугольник", свойства - длины трех сторон. Правильность задания свойств должны
+# проверяться через дескриптор на ввод положительных целых числовых значений. Предусмотреть в классе
+# методы проверки существования треугольника
+
+
+# class DescriptTriangle:
+#     def __set_name__(self, owner, name):
+#         self.name = name
+#
+#     def __get__(self, instance, owner):
+#         return instance.__dict__[self.name]
+#
+#     def __set__(self, instance, value):
+#         if value < 0:
+#             raise ValueError(f"Стороны треугольника должны быть больше нуля")
+#         instance.__dict__[self.name] = value
+#
+#
+# class Triangle:
+#     a = DescriptTriangle()
+#     b = DescriptTriangle()
+#     c = DescriptTriangle()
+#
+#     def __init__(self, a, b, c):
+#         self.a = a
+#         self.b = b
+#         self.c = c
+#
+#     def check_triangle(self):
+#         a, b, c = self.a, self.b, self.c
+#         if a + b > c and b + c > a and c + a > b:
+#             print(f'Треугольник со сторонами ({a}, {b}, {c}) существует.')
+#         else:
+#             print(f'Треугольник со сторонами ({a}, {b}, {c}) не существует.')
+#
+#
+# t1 = Triangle(2, 5, 6)
+# t2 = Triangle(5, 2, 8)
+# t3 = Triangle(7, 3, 6)
+#
+# t1.check_triangle()
+# t2.check_triangle()
+# t3.check_triangle()
