@@ -171,7 +171,6 @@
 # print(multiplication(2, 2))
 
 
-
 # Создать класс "Треугольник", свойства - длины трех сторон. Правильность задания свойств должны
 # проверяться через дескриптор на ввод положительных целых числовых значений. Предусмотреть в классе
 # методы проверки существования треугольника
@@ -219,34 +218,79 @@
 
 # Создать класс (любой). Свойства класса сохранить в JSON объект
 
-import json
+# import json
+#
+#
+# class Bird:
+#     def __init__(self, clas, kingdom, family, genus):
+#         self.clas = clas
+#         self.kingdom = kingdom
+#         self.family = family
+#         self.genus = genus
+#
+#     def __str__(self):
+#         return f"Класс: {self.clas}\nЦарство: {self.kingdom}\nСемейство: {self.family}\n" \
+#                f"Род: {self.genus}"
+#
+#
+# # Экземпляр класса Bird
+# bird_1 = Bird("Птицы", "Животные", "Ястребиные", "Орлы")
+# print(f"{'=' * 50}\nСписок свойств экземпляра bird_1, класса Bird")
+# print(f"{bird_1.__dict__}\n{'=' * 50}")
+#
+# # Сохранения в файл формата JSON
+# with open("instance_classes.json", "w") as file:
+#     json.dump(bird_1.__dict__, file, ensure_ascii=False)
+#
+# # Декодирование словаря из формата JSON в Python
+# with open("instance_classes.json", "r") as file:
+#     data = json.load(file)
+#
+# # Создание нового экземпляра класса Bird со свойствами декодированными из JSON формата
+# bird_2 = Bird(**data)
+# print(f"Метод __str__ класса Bird для экземпляра bird_2\n\n{bird_2}")
 
 
-class Bird:
-    def __init__(self, clas, kingdom, family, genus):
-        self.clas = clas
-        self.kingdom = kingdom
-        self.family = family
-        self.genus = genus
-
-    def __str__(self):
-        return f"Класс: {self.clas}\nЦарство: {self.kingdom}\nСемейство: {self.family}\n" \
-               f"Род: {self.genus}"
+# Вложенный словарь JSON
 
 
-# Экземпляр класса Bird
-bird_1 = Bird("Птицы", "Животные", "Ястребиные", "Орлы")
-print(f"{'=' * 50}\nСписок свойств экземпляра bird_1, класса Bird")
-print(f"{bird_1.__dict__}\n{'=' * 50}")
-
-# Сохранения в файл формата JSON
-with open("instance_classes.json", "w") as file:
-    json.dump(bird_1.__dict__, file, ensure_ascii=False)
-
-# Декодирование словаря из формата JSON в Python
-with open("instance_classes.json", "r") as file:
-    data = json.load(file)
-
-# Создание нового экземпляра класса Bird со свойствами декодированными из JSON формата
-bird_2 = Bird(**data)
-print(f"Метод __str__ класса Bird для экземпляра bird_2\n\n{bird_2}")
+# import json
+# from random import choice
+#
+#
+# def get_person():
+#     name = ""
+#     tel = ""
+#
+#     letter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+#     nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+#
+#     while len(name) != 7:
+#         name += choice(letter)
+#
+#     while len(tel) != 10:
+#         tel += choice(nums)
+#
+#     person = {'name': name, 'tel': tel}
+#     return person
+#
+#
+# def write_json(person_dict):
+#     try:
+#         date = json.load(open('persons.json'))
+#     except FileNotFoundError:
+#         date = {}
+#
+#     key = ""
+#     nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+#
+#     while len(key) != 9:
+#         key += choice(nums)
+#
+#     date[key] = person_dict
+#     with open('persons.json', 'w') as file:
+#         json.dump(date, file, indent=4)
+#
+#
+# for i in range(5):
+#     write_json(get_person())
