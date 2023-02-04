@@ -262,7 +262,7 @@
 #     name = ""
 #     tel = ""
 #
-#     letter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+#     letter = ['ф', 'в', 'а', 'п', 'р', 'е', 'к', 'у']
 #     nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 #
 #     while len(name) != 7:
@@ -289,8 +289,144 @@
 #
 #     date[key] = person_dict
 #     with open('persons.json', 'w') as file:
-#         json.dump(date, file, indent=4)
+#         json.dump(date, file, indent=2)
 #
 #
 # for i in range(5):
 #     write_json(get_person())
+
+
+# Есть некоторый словарь который хранит название стран и столиц
+
+
+import json
+
+
+class Country:
+    @staticmethod
+    def print_info():
+        print(
+            f"{'*' * 30}\nВыбор действия:\n1 - добавление данных\n2 - удаление данных\n3 - поиск данных\n"
+            f"4 - редактирование данных\n5 - просмотр данных\n6 - завершение работы")
+
+    # Проверка на тип данных
+    @staticmethod
+    def str_data(text):
+        if not text.isalpha():
+            print("Ввод должен быть строчным типом данных")
+            return False
+        else:
+            return True
+
+    # Добавление данных
+    @staticmethod
+    def add_country():
+        country = input('Введите название страны (с заглавной буквы): ').capitalize()
+        capital = input('Введите название столицы страны (с заглавной буквы): ').capitalize()
+
+        if Country.str_data(country) and Country.str_data(capital):
+            try:
+                data = json.load(open('country.json', encoding='utf-8'))
+            except FileNotFoundError:
+                data = {}
+
+            data[country] = capital
+            with open('country.json', 'w', encoding='utf-8') as file:
+                json.dump(data, file, indent=2, ensure_ascii=False)
+            print('Файл сохранен')
+
+    # Удаление данных
+    @staticmethod
+    def del_country():
+        try:
+            data = json.load(open('country.json', encoding='utf-8'))
+            del_country = input('Какую страну вы хотите удалить (с заглавной буквы): ').capitalize()
+            if del_country in data:
+                data.pop(del_country)
+                print(f"Страна {del_country} успешно удалена")
+
+                with open('country.json', 'w', encoding='utf-8') as file:
+                    json.dump(data, file, indent=2, ensure_ascii=False)
+                    print('Файл сохранен')
+            else:
+                print(f'Страна {del_country} отсутствует в списке стран')
+
+        except FileNotFoundError:
+            print('Файл не найден!')
+
+    # Поиск данных
+    @staticmethod
+    def data_search():
+        try:
+            data = json.load(open('country.json', encoding='utf-8'))
+            data_search = input('Введите страну или столицу для поиска: ').capitalize()
+            for key, val in data.items():
+                if key == data_search:
+                    print(f"Результат найден -->> {data_search}: {val}")
+                    break
+                elif val == data_search:
+                    print(f"Результат найден -->> {key}: {data_search}")
+                    break
+            else:
+                print(f"'{data_search}' отсутствует в словаре")
+        except FileNotFoundError:
+            print('Файл не найден!')
+
+    # Редактирование данных
+    @staticmethod
+    def data_edit():
+        try:
+            data = json.load(open('country.json', encoding='utf-8'))
+            data_edit = input("Введите страну для редактирования данных: ").capitalize()
+            for key, val in data.items():
+                if key == data_edit:
+                    print(f"Результат найден -->> {data_edit}: {val}")
+                    new_capital = input('Введите новое название столицы страны (с заглавной буквы): ').capitalize()
+                    if Country.str_data(new_capital):
+
+                        data[data_edit] = new_capital
+
+                        with open('country.json', 'w', encoding='utf-8') as file:
+                            json.dump(data, file, indent=2, ensure_ascii=False)
+                            print('Файл сохранен')
+                        break
+                    else:
+                        break
+            else:
+                print(f"'{data_edit}' отсутствует в словаре")
+        except FileNotFoundError:
+            print('Файл не найден!')
+
+    # Просмотр данных
+    @staticmethod
+    def viewing_data():
+        try:
+            data = json.load(open('country.json', encoding='utf-8'))
+            print(data)
+        except FileNotFoundError:
+            print('Файл не найден!')
+
+
+Country.print_info()
+input_number = int(input('Ввод: '))
+
+while input_number != 6:
+    if input_number == 1:
+        Country.add_country()
+
+    if input_number == 2:
+        Country.del_country()
+
+    if input_number == 3:
+        Country.data_search()
+
+    if input_number == 4:
+        Country.data_edit()
+
+    if input_number == 5:
+        Country.viewing_data()
+
+    Country.print_info()
+    input_number = int(input('Ввод: '))
+
+print('Программа закрыта')

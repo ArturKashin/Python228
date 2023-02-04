@@ -986,70 +986,116 @@
 
 # ======================================================
 
-
-class Student:
-    def __init__(self, name, marks):
-        self.name = name
-        self.marks = marks
-
-    def __str__(self):
-        s = ', '.join(map(str, self.marks))
-        return f"Студент: {self.name} {s}"
-
-    def add_marks(self, mark):
-        self.marks.append(mark)
-
-    def delete_mark(self, index):
-        self.marks.pop(index)
-
-    def edit_mark(self, index, new_mark):
-        self.marks[index] = new_mark
-
-    def aver_mark(self):
-        return round(sum(self.marks) / len(self.marks), 2)
-
-
-class Group:
-    def __init__(self, students, group):
-        self.students = students
-        self.group = group
-
-    def __str__(self):
-        a = '\n'.join(map(str, self.students))
-        return f"Группа: {self.group}\n{a}"
-
-    def add_student(self, student):
-        self.students.append(student)
-
-    def remove_student(self, index):
-        return self.students.pop(index)
-
-    @staticmethod
-    def change_group(group1, group2, index):
-        return group2.add_student(group1.remove_student(index))
-
-
-st1 = Student('Bodnya', [5, 4, 3, 4, 5, 3])
-st2 = Student('Nikolaenko', [2, 3, 5, 4])
-st3 = Student('Birukov', [3, 4, 5, 2, 5, 4])
-sts = [st1, st2]
-my_group = Group(sts, 'ГК Python')
+# import json
+#
+#
+# class Student:
+#     def __init__(self, name, marks):
+#         self.name = name
+#         self.marks = marks
+#
+#     def __str__(self):
+#         s = ', '.join(map(str, self.marks))
+#         return f"Студент: {self.name} {s}"
+#
+#     def add_marks(self, mark):
+#         self.marks.append(mark)
+#
+#     def delete_mark(self, index):
+#         self.marks.pop(index)
+#
+#     def edit_mark(self, index, new_mark):
+#         self.marks[index] = new_mark
+#
+#     def aver_mark(self):
+#         return round(sum(self.marks) / len(self.marks), 2)
+#
+#     @staticmethod
+#     def dump_ti_json(stud, filename):
+#         try:
+#             data =json.load(open(filename))
+#         except FileNotFoundError:
+#             data = []
+#
+#         data.append({"name": stud.name, "marks": stud.marks})
+#
+#         with open(filename, 'w') as file:
+#             json.dump(data, file)
+#
+#     @staticmethod
+#     def load_to_file(filename):
+#         with open(filename, 'r') as file:
+#             print(json.load(file))
+#
+#
+# class Group:
+#     def __init__(self, students, group):
+#         self.students = students
+#         self.group = group
+#
+#     def __str__(self):
+#         a = '\n'.join(map(str, self.students))
+#         return f"Группа: {self.group}\n{a}"
+#
+#     def add_student(self, student):
+#         self.students.append(student)
+#
+#     def remove_student(self, index):
+#         return self.students.pop(index)
+#
+#     @staticmethod
+#     def change_group(group1, group2, index):
+#         return group2.add_student(group1.remove_student(index))
+#
+#     @staticmethod
+#     def dump_group(file, group):
+#         try:
+#             data = json.load(open(file))
+#         except FileNotFoundError:
+#             data = []
+#
+#         with open(file, 'w') as file:
+#             stud_list = []
+#             for i in group.students:
+#                 stud_list.append([i.name, i.marks])
+#
+#             data.append(stud_list)
+#             json.dump(data, file, indent=2)
+#
+#     @staticmethod
+#     def upload_journal(file):
+#         with open(file, 'r') as file:
+#             print(json.load(file))
+#
+#
+# st1 = Student('Bodnya', [5, 4, 3, 4, 5, 3])
+# # Student.dump_ti_json(st1, 'student.json')
+# # Student.load_to_file('student.json')
+# st2 = Student('Nikolaenko', [2, 3, 5, 4])
+# st3 = Student('Birukov', [3, 4, 5, 2, 5, 4])
+# # Student.dump_ti_json(st2, 'student.json')
+# # Student.load_to_file('student.json')
+# sts = [st1, st2]
+# my_group = Group(sts, 'ГК Python')
 # print(my_group)
 # print()
-my_group.add_student(st3)
+# my_group.add_student(st3)
+# # print(my_group)
+# # print()
+# my_group.remove_student(1)
+# print(my_group)
+# group22 = [st2]
+# # print()
+# my_group2 = Group(group22, 'ГК Web')
+# Group.dump_group('group.json', my_group)
+# Group.dump_group('group.json', my_group2)
+# Group.upload_journal('group.json')
+# print(my_group2)
+# Group.change_group(my_group, my_group2, 1)
+# print()
 # print(my_group)
 # print()
-my_group.remove_student(1)
-print(my_group)
-group22 = [st2]
-print()
-my_group2 = Group(group22, 'ГК Web')
-print(my_group2)
-Group.change_group(my_group, my_group2, 1)
-print()
-print(my_group)
-print()
-print(my_group2)
+# print(my_group2)
 # print(st1)
 # st1.add_marks(9)
 # print(st1)
@@ -1058,3 +1104,45 @@ print(my_group2)
 # st1.edit_mark(1, 5)
 # print(st1)
 # print(st1.aver_mark())
+
+
+# ======================================================
+
+# import requests
+# import json
+#
+# response = requests.get("https://jsonplaceholder.typicode.com/todos")
+# todos = json.loads(response.text)
+#
+# # print(todos[:10])
+# # print(type(todos))
+#
+# todos_by_user = {}
+#
+# for i in todos:
+#     if i['completed']:
+#         try:
+#             todos_by_user[i['userId']] += 1
+#         except KeyError:
+#             todos_by_user[i['userId']] = 1
+#
+# print(todos_by_user)
+#
+# top_user = sorted(todos_by_user.items(), key=lambda x: x[1], reverse=True)
+#
+# print(top_user)
+#
+# max_completed = top_user[0][1]
+# print(max_completed)
+#
+# users = []
+# for user, num_complete in top_user:
+#     if num_complete < max_completed:
+#         break
+#     else:
+#         users.append(str(user))
+#
+# print(users)
+# max_users = " and ".join(users)
+# s = 's' if len(max_users) > 1 else ''
+# print(f"user{s} {max_users} completed {max_completed} TODOs")
