@@ -1146,3 +1146,184 @@
 # max_users = " and ".join(users)
 # s = 's' if len(max_users) > 1 else ''
 # print(f"user{s} {max_users} completed {max_completed} TODOs")
+#
+#
+# def keep(todo):
+#     is_complete = todo['completed']
+#     has_max_count = str(todo['userId']) in users
+#     return is_complete and has_max_count
+
+#
+# with open('filtered_dada_file.json', 'w') as file:
+#     filtered_todos = list(filter(keep, todos))
+#     json.dump(filtered_todos, file, indent=2)
+#
+# with open('filtered_dada_file.json', 'r') as file:
+#     data = json.load(file)
+#     print(data)
+
+
+# ======================================================
+
+# csv (Comma Separated Values) Переменные, разделенный запятыми
+
+# import csv
+
+# with open('data.csv', 'r', encoding='utf-8') as r_file:
+#     file_reader = csv.reader(r_file, delimiter=';')
+#     count = 0
+#     for row in file_reader:
+#         if count == 0:
+#             print(f"Файл содержит столбцы: {', '.join(row)}")
+#         else:
+#             print(f"   {row[0]} - {row[1]}. Родился в {row[2]} году")
+#         count += 1
+#     print(f"Всего в файлу {count} строки.")
+
+
+# ======================================================
+# метод csv.DictReader()
+
+# with open('data.csv', 'r', encoding='utf-8') as r_file:
+#     field_names = ['Имя', 'Профессия', 'Год рождения']
+#     file_reader = csv.DictReader(r_file, delimiter=';', fieldnames=field_names)
+#     count = 0
+#     for row in file_reader:
+#         # print(row)
+#         if count == 0:
+#             print(f"Файл содержит столбцы: {', '.join(row)}")
+#         print(f"   {row['Имя']} - {row['Профессия']}. Родился в {row['Год рождения']} году")
+#         count += 1
+#     print(f"Всего в файлу {count} строки.")
+
+
+# with open('student.csv', mode='w') as file:
+#     writer = csv.writer(file, delimiter=';', lineterminator="\r")
+#     writer.writerow(['Имя', "Класс", "Возраст"])
+#     writer.writerow(['Женя', "9", "15"])
+#     writer.writerow(['Саша', "5", "12"])
+
+
+# ======================================================
+# метод csv.writer()
+
+# data = [['hostname', 'vendor', 'model', 'location'],
+#         ['sw1', 'Cisco', '3750', 'London, Best str'],
+#         ['sw2', 'Cisco', '3850', 'Liverpool, Better str'],
+#         ['sw3', 'Cisco', '3650', 'Liverpool, Better str'],
+#         ['sw4', 'Cisco', '3650', 'London, Best str']]
+#
+# with open('data_sw.csv', mode='w') as file:
+#     writer = csv.writer(file, delimiter=';', lineterminator='\r')
+#     # for row in data:
+#     #     writer.writerow(row)
+#     writer.writerows(data)
+#
+# with open('data_sw.csv') as file:
+#     print(file.read())
+
+
+# ======================================================
+# Метод csv.DictWriter()
+
+# import csv
+
+# with open('stud.csv', 'w') as file:
+#     names = ['Имя', 'Возраст']
+#     file_writer = csv.DictWriter(file, delimiter=';', lineterminator='\r', fieldnames=names)
+#     file_writer.writeheader()
+#     file_writer.writerow({"Имя": "Саша", "Возраст": "6"})
+#     file_writer.writerow({"Имя": "Маша", "Возраст": "15"})
+#     file_writer.writerow({"Имя": "Вова", "Возраст": "14"})
+
+
+# ======================================================
+
+# data = [{
+#     'hostname': 'sw1',
+#     'location': 'London',
+#     'model': '3750',
+#     'vendor': 'Cisco'
+# }, {
+#     'hostname': 'sw2',
+#     'location': 'Liverpool',
+#     'model': '3850',
+#     'vendor': 'Cisco'
+# }, {
+#     'hostname': 'sw3',
+#     'location': 'Liverpool',
+#     'model': '3650',
+#     'vendor': 'Cisco'
+# }, {
+#     'hostname': 'sw4',
+#     'location': 'London',
+#     'model': '3650',
+#     'vendor': 'Cisco'
+# }]
+
+
+# with open('dictwriter.csv', 'w') as file:
+#     writer = csv.DictWriter(file, delimiter=';', lineterminator='\r', fieldnames=list(data[0].keys()))
+#     writer.writeheader()
+#     for d in data:
+#         writer.writerow(d)
+
+
+# ======================================================
+# Парсинг
+
+# from bs4 import BeautifulSoup
+# import re
+
+
+# def get_copywriter(tag):
+#     whois = tag.find("div", class_="whois").text.strip()
+#     if "Copywriter" in whois:
+#         return tag
+#     return None
+
+# def get_salary(s):
+#     pattern = r"\d+"
+#     res = re.findall(pattern, s)[0]
+#     res = re.search(pattern, s).group()
+#     print(res)
+
+
+# f = open('index.html', encoding='utf-8').read()
+# soup = BeautifulSoup(f, "html.parser")
+
+# salary = soup.find_all("div", {"data-set": "salary"})
+# for i in salary:
+#     get_salary(i.text)
+
+
+# copywriter = []
+# row = soup.find_all('div', class_="row")
+# for i in row:
+#     cw = get_copywriter(i)
+#     if cw:
+#         copywriter.append(cw)
+
+# print(copywriter)
+
+# row = soup.find('div', class_="name").text
+# row = soup.find_all('div', class_="name")
+# print(row)
+
+# row = soup.find_all("div", class_="row")[1].find("div", class_="links")
+# print(row)
+
+# row = soup.find_all("div", {"data-set": "salary"})
+# print(row)
+
+# row = soup.find("div", string="Alena").parent.parent
+# row = soup.find("div", string="Alena").find_parent(class_="row")
+# print(row)
+
+# row = soup.find("div", id="whois3")  # Текущий элемент
+# print(row)
+# row = soup.find("div", id="whois3").find_next_sibling()  # Следующий элемент
+# print(row)
+# row = soup.find("div", id="whois3").find_previous_sibling()  # Пред идущий элемент
+# print(row)
+
