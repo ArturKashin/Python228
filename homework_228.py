@@ -456,51 +456,52 @@
 # ======================================================
 # Реализовать парсинг данных из любого интернет ресурса с однотипными данными
 
-import csv
-import requests
-from bs4 import BeautifulSoup
+# import csv
+# import requests
+# from bs4 import BeautifulSoup
 
 
-def get_html(url):
-    request = requests.get(url)
-    return request
+# def get_html(url):
+#     request = requests.get(url)
+#     return request
+#
+#
+# # функция записи в csv файл
+# def write_csv(data):
+#     with open('exchange_rate.csv', 'a') as file:
+#         writer = csv.writer(file, lineterminator='\r', delimiter=';')
+#         writer.writerow((data['code'],
+#                          data['nominal'],
+#                          data['currency'],
+#                          data['course'],
+#                          data['changes'],
+#                          data['%']))
+#
+#
+# def get_data(html):
+#     # запись заголовков
+#     with open('exchange_rate.csv', 'a') as file:
+#         writer = csv.writer(file, lineterminator='\r', delimiter=';')
+#         writer.writerow(("Код", "Номинал", "Валюта", "Курс ЦБ", "изменения", "%"))
+#
+#     # создание объекта для парсинга
+#     soup = BeautifulSoup(html.text.encode('utf-8'), "lxml")
+#     exchange_rates = soup.find_all('a', class_='finance-currency-table__tr')
+#
+#     for i in exchange_rates:
+#         object_currency = i.find_all('div', class_='finance-currency-table__cell')
+#
+#         data = {'code': object_currency[0].text.strip(),
+#                 'nominal': object_currency[1].text.strip(),
+#                 'currency': object_currency[2].text.strip(),
+#                 'course': object_currency[3].text.strip(),
+#                 'changes': object_currency[4].text.strip(),
+#                 '%': object_currency[5].text.strip(),
+#                 }
+#
+#         write_csv(data)
+#
+#
+# if __name__ == '__main__':
+#     get_data(get_html('https://finance.rambler.ru/currencies/'))
 
-
-# функция записи в csv файл
-def write_csv(data):
-    with open('exchange_rate.csv', 'a') as file:
-        writer = csv.writer(file, lineterminator='\r', delimiter=';')
-        writer.writerow((data['code'],
-                         data['nominal'],
-                         data['currency'],
-                         data['course'],
-                         data['changes'],
-                         data['%']))
-
-
-def get_data(html):
-    # запись заголовков
-    with open('exchange_rate.csv', 'a') as file:
-        writer = csv.writer(file, lineterminator='\r', delimiter=';')
-        writer.writerow(("Код", "Номинал", "Валюта", "Курс ЦБ", "изменения", "%"))
-
-    # создание объекта для парсинга
-    soup = BeautifulSoup(html.text.encode('utf-8'), "lxml")
-    exchange_rates = soup.find_all('a', class_='finance-currency-table__tr')
-
-    for i in exchange_rates:
-        object_currency = i.find_all('div', class_='finance-currency-table__cell')
-
-        data = {'code': object_currency[0].text.strip(),
-                'nominal': object_currency[1].text.strip(),
-                'currency': object_currency[2].text.strip(),
-                'course': object_currency[3].text.strip(),
-                'changes': object_currency[4].text.strip(),
-                '%': object_currency[5].text.strip(),
-                }
-
-        write_csv(data)
-
-
-if __name__ == '__main__':
-    get_data(get_html('https://finance.rambler.ru/currencies/'))
