@@ -1327,3 +1327,168 @@
 # row = soup.find("div", id="whois3").find_previous_sibling()  # Пред идущий элемент
 # print(row)
 
+
+# ======================================================
+# Парсинг с сайта
+
+# import requests
+
+# r = requests.get("https://ru.wordpress.org/")
+# print(r.headers)
+# print(r.headers['Content-Type'])
+# print(r.content)
+# print(r.text)
+
+# import requests
+# from bs4 import BeautifulSoup
+#
+#
+# def get_html(url):
+#     r = requests.get(url)
+#     return r.text
+#
+#
+# def get_data(html):
+#     soup = BeautifulSoup(html, "lxml")
+#     p1 = soup.find('header', id='masthead').find('p', class_='site-title').text
+#     return p1
+#
+#
+# def main():
+#     url = "https://ru.wordpress.org/"
+#     print(get_data(get_html(url)))
+#
+#
+# if __name__ == '__main__':
+#     main()
+
+
+# ======================================================
+# import csv
+# import requests
+# from bs4 import BeautifulSoup
+# import re
+#
+#
+# def get_html(url):
+#     r = requests.get(url)
+#     return r.text
+#
+#
+# def refined(s):
+#     res = re.sub(r'\D+', '', s)
+#     return res
+#
+#
+# def write_csv(data):
+#     with open('plugins.csv', 'a') as file:
+#         writer = csv.writer(file, lineterminator='\r', delimiter=';')
+#         writer.writerow((data['name'], data['url'], data['rating']))
+#
+#
+# def get_data(html):
+#     soup = BeautifulSoup(html, "lxml")
+#     p1 = soup.find_all('section', class_='plugin-section')[3]
+#     plugins = p1.find_all('article')
+#
+#     for plugin in plugins:
+#         name = plugin.find('h3').text
+#         url = plugin.find('h3').find('a').get('href')
+#         rating = plugin.find('span', class_='rating-count').find('a').text
+#         r = refined(rating)
+#         data = {'name': name, "url": url, "rating": r}
+#         write_csv(data)
+#
+#
+# def main():
+#     url = "https://ru.wordpress.org/plugins/"
+#     get_data(get_html(url))
+#
+#
+# if __name__ == '__main__':
+#     main()
+
+
+# ======================================================
+# import csv
+# import requests
+# from bs4 import BeautifulSoup
+# import re
+#
+#
+# def get_html(url):
+#     r = requests.get(url)
+#     return r.text
+#
+#
+# def refine_snippet(s):
+#     return re.sub(r"[🐰✅❤🇨🇳🎬🧱👏]", '', s)
+#
+#
+# def refine_cy(s):
+#     return s.split()[-1]
+#
+#
+# def write_scv(data):
+#     with open('plugins1.csv', 'a') as file:
+#         writer = csv.writer(file, lineterminator='\r', delimiter=';')
+#         writer.writerow((data['name'],
+#                          data['url'],
+#                          data['snippet'],
+#                          data['cy']))
+#
+#
+# def get_data(html):
+#     soup = BeautifulSoup(html, "lxml")
+#     elements = soup.find_all('article', class_='plugin-card')
+#     for el in elements:
+#         try:
+#             name = el.find('h3').text
+#         except ValueError:
+#             name = ''
+#
+#         try:
+#             url = el.find('h3').find("a").get("href")
+#         except ValueError:
+#             url = ''
+#
+#         try:
+#             snippet = el.find('div', class_='entry-excerpt').text.strip()
+#             snippet1 = refine_snippet(snippet)
+#         except ValueError:
+#             snippet1 = ''
+#
+#         try:
+#             c = el.find('span', class_="tested-with").text.strip()
+#             cy = refine_cy(c)
+#         except ValueError:
+#             cy = ''
+#
+#         deta = {'name': name, 'url': url, 'snippet': snippet1, 'cy': cy}
+#
+#         write_scv(deta)
+#
+#
+# def main():
+#     for i in range(0, 25):
+#         url = f"https://ru.wordpress.org/plugins/browse/blocks/page/{i}/"
+#         get_data(get_html(url))
+#
+#
+# if __name__ == '__main__':
+#     main()
+
+
+# ======================================================
+# from parsers import Parser
+#
+#
+# def main():
+#     pars = Parser("https://www.ixbt.com/live/index/news/", "new.txt")
+#     pars.run()
+#
+#
+# if __name__ == '__main__':
+#     main()
+
+
