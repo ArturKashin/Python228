@@ -505,3 +505,22 @@
 # if __name__ == '__main__':
 #     get_data(get_html('https://finance.rambler.ru/currencies/'))
 
+
+# ======================================================
+# Числовая змейка, по заданным параметрам
+#
+# n1, n2, n3 = 5, 6, 1
+#
+# for i in range(n1):
+#     sp = []
+#     for j in range(n2):
+#         if len(str(n3)) == len(str(n1 + n2)):
+#             sp.append(str(n3))
+#         else:
+#             sp.append(' ' + str(n3))
+#         n3 += 1
+#     if i % 2 == 0:
+#         print(*sp)
+#     else:
+#         print(*sp[::-1])
+
