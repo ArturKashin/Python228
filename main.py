@@ -1492,26 +1492,76 @@
 #     main()
 
 
+# import sqlite3 as sq
+#
+# # con = sq.connect('profile.db')
+# # cur = con.cursor()
+# #
+# # # открывается соединения
+# # cur.execute("""""")
+# #
+# #
+# # # закрывается соединения
+# # con.close()
+#
+#
+# with sq.connect('profile.db') as con:
+#     cur = con.cursor()
+#     cur.execute("""CREATE TABLE IF NOT EXISTS users(
+#     id INTEGER PRIMARY KEY AUTOINCREMENT,
+#     name TEXT NOT NULL,
+#     summa REAL,
+#     data BLOB
+#     )""")
+
+#     # удаление таблицы из базы
+#     cur.execute('DROP TABLE users')
+
+
+# ======================================================
+# РАБОТА С БАЗОЙ ДАННЫХ
 import sqlite3 as sq
 
-# con = sq.connect('profile.db')
-# cur = con.cursor()
-#
-# # открывается соединения
-# cur.execute("""""")
-#
-#
-# # закрывается соединения
-# con.close()
-
-
-with sq.connect('profile.db') as con:
+with sq.connect('user.db') as con:
     cur = con.cursor()
-    cur.execute("""CREATE TABLE IF NOT EXISTS users(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    summa REAL,
-    data BLOB
-    )""")
-    # удаление таблицы из базы
-    cur.execute('DROP TABLE users')
+
+    # СОЗДАНИЕ БАЗЫ ДАННЫХ
+    # cur.execute("""
+    # CREATE TABLE IF NOT EXISTS person(
+    # id INTEGER PRIMARY KEY AUTOINCREMENT,
+    # name TEXT NOT NULL,
+    # phone BLOB NOT NULL DEFAULT '+79090000000',
+    # age INTEGER NOT NULL CHECK(age>15 AND age<70),
+    # email TEXT UNIQUE
+    # )""")
+
+    # Переименовать таблицу
+    # cur.execute("""
+    # ALTER TABLE person
+    # RENAME TO person_table;
+    # """)
+
+    # Внесение изменения в таблицу (добавление столбца)
+    # cur.execute("""
+    # ALTER TABLE person_table
+    # ADD COLUMN address TEXT NOT NULL DEFAULT "street"
+    # """)
+
+    # Переименовать столбца
+    # cur.execute("""
+    # ALTER TABLE person_table
+    # RENAME COLUMN address TO home_address
+    # """)
+
+    # Удаление столбца
+    # cur.execute("""
+    # ALTER TABLE person_table
+    # DROP COLUMN home_address
+    # """)
+
+    # Удаление таблицы
+    # cur.execute("""
+    # DROP TABLE person_table
+    # """)
+
+
