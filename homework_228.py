@@ -519,8 +519,23 @@
 #         else:
 #             sp.append(' ' + str(n3))
 #         n3 += 1
+#     if i % 2 == 1:
+#         sp = reversed(sp)
+#     print(*sp)
+#
+#
+# m = int(input()) # строка
+# n = int(input()) # столбец
+# a = 0            # счетчик
+#
+# ln = len(str(m*n))
+# for i in range(m):
+#     lst = []
+#     for j in range(n):
+#         a += 1
+#         lst.append(a)
 #     if i % 2 == 0:
-#         print(*sp)
-#     else:
-#         print(*sp[::-1])
-
+#         lst = reversed(lst)
+#     for z in lst:
+#         print(f"{z:>{ln}d}", end=' ')
+#     print()

@@ -1409,7 +1409,7 @@
 #     main()
 
 
-#======================================================
+# ======================================================
 # import csv
 # import requests
 # from bs4 import BeautifulSoup
@@ -1520,48 +1520,72 @@
 
 # ======================================================
 # РАБОТА С БАЗОЙ ДАННЫХ
-import sqlite3 as sq
+# import sqlite3 as sq
+#
+# with sq.connect('user.db') as con:
+# #     cur = con.cursor()
+#
+#     СОЗДАНИЕ БАЗЫ ДАННЫХ
+#     cur.execute("""
+#     CREATE TABLE IF NOT EXISTS person(
+#     id INTEGER PRIMARY KEY AUTOINCREMENT,
+#     name TEXT NOT NULL,
+#     phone BLOB NOT NULL DEFAULT '+79090000000',
+#     age INTEGER NOT NULL CHECK(age>15 AND age<70),
+#     email TEXT UNIQUE
+#     )""")
+#
+#     Переименовать таблицу
+#     cur.execute("""
+#     ALTER TABLE person
+#     RENAME TO person_table;
+#     """)
+#
+#     Внесение изменения в таблицу (добавление столбца)
+#     cur.execute("""
+#     ALTER TABLE person_table
+#     ADD COLUMN address TEXT NOT NULL DEFAULT "street"
+#     """)
+#
+#     Переименовать столбца
+#     cur.execute("""
+#     ALTER TABLE person_table
+#     RENAME COLUMN address TO home_address
+#     """)
+#
+#     Удаление столбца
+#     cur.execute("""
+#     ALTER TABLE person_table
+#     DROP COLUMN home_address
+#     """)
+#
+#     Удаление таблицы
+#     cur.execute("""
+#     DROP TABLE person_table
+#     """)
 
-with sq.connect('user.db') as con:
-    cur = con.cursor()
 
-    # СОЗДАНИЕ БАЗЫ ДАННЫХ
-    # cur.execute("""
-    # CREATE TABLE IF NOT EXISTS person(
-    # id INTEGER PRIMARY KEY AUTOINCREMENT,
-    # name TEXT NOT NULL,
-    # phone BLOB NOT NULL DEFAULT '+79090000000',
-    # age INTEGER NOT NULL CHECK(age>15 AND age<70),
-    # email TEXT UNIQUE
-    # )""")
+# ======================================================
+# import sqlite3 as sq
+#
+# with sq.connect('db_3.db') as con:
+#     cur = con.cursor()
+#     cur.execute("""
+#     SELECT *
+#     FROM T1
+#     ORDER BY FName
+#     LIMIT 2, 5
+#     """)
+#
+#     res = cur.fetchone()
+#     res1 = cur.fetchmany(3)
+#     print(res)
+#     print(res1)
+#
+#     # for res in cur:
+#     #     print(res)
 
-    # Переименовать таблицу
-    # cur.execute("""
-    # ALTER TABLE person
-    # RENAME TO person_table;
-    # """)
 
-    # Внесение изменения в таблицу (добавление столбца)
-    # cur.execute("""
-    # ALTER TABLE person_table
-    # ADD COLUMN address TEXT NOT NULL DEFAULT "street"
-    # """)
-
-    # Переименовать столбца
-    # cur.execute("""
-    # ALTER TABLE person_table
-    # RENAME COLUMN address TO home_address
-    # """)
-
-    # Удаление столбца
-    # cur.execute("""
-    # ALTER TABLE person_table
-    # DROP COLUMN home_address
-    # """)
-
-    # Удаление таблицы
-    # cur.execute("""
-    # DROP TABLE person_table
-    # """)
-
+# ======================================================
+# Проектирование базы данных
 
