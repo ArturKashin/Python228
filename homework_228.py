@@ -539,3 +539,24 @@
 #     for z in lst:
 #         print(f"{z:>{ln}d}", end=' ')
 #     print()
+
+
+# ======================================================
+from jinja2 import Environment, FileSystemLoader
+
+home_work = {'block_h': 'Страница с домашним заданием', 'block_p': 'Домашнее задание выполнено!!!'}
+cars = [
+    {'model': 'Audi', 'price': 23000, 'count': 2},
+    {'model': 'Skoda', 'price': 17300, 'count': 4},
+    {'model': 'Renault', 'price': 44300, 'count': 7},
+    {'model': 'Wolksvagen', 'price': 21300, 'count': 0}
+]
+
+file_loader = FileSystemLoader('templates_dz')
+env = Environment(loader=file_loader)
+
+tm = env.get_template('main.html')
+msg = tm.render(work=home_work, cars=cars, title='Домашнее задание')
+
+print(msg)
+

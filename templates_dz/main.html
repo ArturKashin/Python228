@@ -1,0 +1,14 @@
+{% include 'header.html' ignore missing %}
+
+<h1>{{ work.block_h }}</h1>
+<div>
+    {%- for i in cars %}
+        <p>Модель автомобиля: {{ i.model }}, стоимость автомобиля: {{ i.price }}
+        Всего автомобилей в наличие: {{ i.count }}
+        </p>
+        <a href="">Оставить заявку</a>
+    {% endfor %}
+</div>
+<p>{{ work.block_p }}</p>
+
+{% include 'footer.html' ignore missing %}
