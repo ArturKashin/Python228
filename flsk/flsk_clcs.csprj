@@ -1,0 +1,29 @@
+
+<codestructure version="1.11.1">
+<phptree>
+</phptree>
+<jstree>
+</jstree>
+<pythontree>
+<treenode node="flsite;Python:Python Module;C:\Python_228\flsk\flsite.py;f0;0;0;2147483647;;;;vpos;;v;;a;;rC:\Python_228\flsk\flsite.py;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l">
+<treenode node="Flask;Python:Python Import;C:\Python_228\flsk\flsite.py;f17;3;23;3;;;;vposflask.Flask;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l">
+</treenode>
+<treenode node="about;Python:Python Function;C:\Python_228\flsk\flsite.py;f3;21;0;26;;;;vpos;;v;;a:expr: render_template(&quot;about.html&quot;, title=&quot;О нас&quot;, menu=menu)&#10;;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k about();;l">
+</treenode>
+<treenode node="app;Python:Python Variable;C:\Python_228\flsk\flsite.py;f0;5;3;5;;;;vpos:expr: Flask(__name__)&#10;;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l">
+</treenode>
+<treenode node="index;Python:Python Function;C:\Python_228\flsk\flsite.py;f3;15;0;20;;;;vpos;;v;;a:expr: render_template(&quot;index.html&quot;, title=&quot;Главная&quot;, menu=menu)&#10;;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k index();;l">
+</treenode>
+<treenode node="menu;Python:Python Variable;C:\Python_228\flsk\flsite.py;f0;7;4;7;;;;vpos:expr: [{&quot;name&quot;: &quot;Главная&quot;, &quot;url&quot;: &quot;index&quot;},&#10;;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l">
+</treenode>
+<treenode node="profile;Python:Python Function;C:\Python_228\flsk\flsite.py;f3;27;0;31;;;;vpos;;v;;a:expr: f&quot;Пользователь: {username}&quot;&#10;;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k profile(username);;lusername;;p;;x">
+<treenode node="username;Python:Python Variable;C:\Python_228\flsk\flsite.py;f12;27;20;27;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l">
+</treenode>
+</treenode>
+<treenode node="render_template;Python:Python Import;C:\Python_228\flsk\flsite.py;f24;3;40;3;;;;vposflask.render_template;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l">
+</treenode>
+<treenode node="url_for;Python:Python Import;C:\Python_228\flsk\flsite.py;f41;3;49;3;;;;vposflask.url_for;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l">
+</treenode>
+</treenode>
+</pythontree>
+</codestructure>

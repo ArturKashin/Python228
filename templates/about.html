@@ -1,0 +1,20 @@
+<!--наследование шаблона-->
+{% extends 'page.html' %}
+<!--# ===================================================-->
+
+{% block title %}О сайте{% endblock %}
+
+
+{% block content %}
+
+<!--наследуем код с page.html -->
+{{ super() }}
+
+<h1>{{ self.title() }}</h1>
+<p>Описание сайта</p>
+{% endblock %}
+
+
+{%- block item -%}
+<p class="item">{{ super() }}</p>
+{%- endblock item -%}

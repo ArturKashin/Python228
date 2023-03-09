@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<project name="C:\Python_228\flsk\flsk.clpprj">
+ <settings>
+  <PM_URL><![CDATA[http://localhost/C:/Python_228/flsk]]></PM_URL>
+  <PM_HOME_URL><![CDATA[http://localhost/C:/Python_228/flsk]]></PM_HOME_URL>
+  <PM_LIBS><![CDATA[]]></PM_LIBS>
+  <PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION>
+  <PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR>
+  <PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE>
+  <PM_LANGUAGE><![CDATA[]]></PM_LANGUAGE>
+ </settings>
+ <removed value=";"/>
+ <added value=""/>
+ <lastopfiles>
+  <file name="C:\Python_228\flsk\static\css\style.css"/>
+  <lastactivefile name=""/>
+ </lastopfiles>
+ <todoblock/>
+ <dbgurls/>
+ <filescache>
+  <file name="C:\Python_228\flsk\templates\index.html" crc="1678354278346"/>
+  <file name="C:\Python_228\flsk\templates\base.html" crc="1678359165501"/>
+  <file name="C:\Python_228\flsk\templates\about.html" crc="1678357996361"/>
+  <file name="C:\Python_228\flsk\static\css\style.css" crc="1678359555204"/>
+  <file name="C:\Python_228\flsk\flsite.py" crc="1678362297195"/>
+ </filescache>
+</project>

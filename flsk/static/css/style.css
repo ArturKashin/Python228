@@ -1,0 +1,21 @@
+body{
+    background: #f6ff9c;
+    margin: 0;
+    padding: 0;
+}
+
+.menu{
+	display: flex;
+	justify-content: space-around;
+	list-style: none;
+	background: orange;
+	padding: 20px;
+	margin-top: 0px;
+}
+
+.content{
+	margin: 0 auto;
+	max-width: 1200px;
+	padding: 20px;
+	box-sizing: border-box;
+}

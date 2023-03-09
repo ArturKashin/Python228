@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<project name="C:\Python_228\templates_dz\templates_dz.clpprj">
+ <settings>
+  <PM_URL><![CDATA[http://localhost/C:/Python_228/templates_dz]]></PM_URL>
+  <PM_HOME_URL><![CDATA[http://localhost/C:/Python_228/templates_dz]]></PM_HOME_URL>
+  <PM_LIBS><![CDATA[]]></PM_LIBS>
+  <PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION>
+  <PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR>
+  <PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE>
+  <PM_LANGUAGE><![CDATA[]]></PM_LANGUAGE>
+ </settings>
+ <removed value=";"/>
+ <added value=""/>
+ <lastopfiles>
+  <lastactivefile name=""/>
+ </lastopfiles>
+ <todoblock/>
+ <dbgurls/>
+ <filescache>
+  <file crc="1677945041950" name="C:\Python_228\templates_dz\main.html"/>
+  <file crc="1677943901421" name="C:\Python_228\templates_dz\header.html"/>
+  <file crc="1677943901415" name="C:\Python_228\templates_dz\footer.html"/>
+ </filescache>
+</project>

@@ -1,5 +1,5 @@
 # 69 Урок
-
+#
 # class Goods:
 #     def __init__(self, name, weight, price):
 #         print("Init Goods")
@@ -33,12 +33,12 @@
 # n.print_info()
 # n.save_sell_log()
 # print(NoteBook.mro())
-
-
+#
+#
 # Перегрузка операторов
-
+#
 # 24 * 60 * 60 = 86400 (число секунд в одном дне)
-
+#
 # class Clock:
 #     DAY = 86400
 #
@@ -106,8 +106,8 @@
 # print(c1.get_format_time())
 # c1 = c1 // c2
 # print(c1.get_format_time())
-
-
+#
+#
 # class Student:
 #     def __init__(self, name, marks):
 #         self.name = name
@@ -143,8 +143,8 @@
 # del s1[4]
 # print(s1.marks)
 # print(s1.marks[2])
-
-
+#
+#
 # class Clock:
 #     DAY = 86400
 #
@@ -207,10 +207,10 @@
 # c1["sec"] = 15
 # print(c1["hour"], c1["min"], c1["sec"])
 # print(c1.get_format_time())
-
-
+#
+#
 # 71 урок Полиморфизм
-
+#
 # class Rectangle:
 #     def __init__(self, w, h):
 #         self.w = w
@@ -254,8 +254,8 @@
 #     #     print(i.get_per_rect())
 #     # else:
 #     #     print(i.get_per_sq())
-
-
+#
+#
 # class Number:
 #     def __init__(self, value):
 #         self.value = value
@@ -277,8 +277,8 @@
 #
 # print(t1.total(35))
 # print(t2.total(35))
-
-
+#
+#
 # class Cat:
 #     def __init__(self, name, age):
 #         self.name = name
@@ -309,8 +309,8 @@
 # for i in sp:
 #     print(i.print_info())
 #     print(i.make_sound())
-
-
+#
+#
 # class Human:
 #     def __init__(self, surname, name, age):
 #         self.surname = surname
@@ -365,8 +365,8 @@
 #
 # for i in group:
 #     i.info()
-
-
+#
+#
 # class Cat:
 #     def __init__(self, name):
 #         self.name = name
@@ -380,8 +380,8 @@
 #
 # cat = Cat("Пушок")
 # print(cat)
-
-
+#
+#
 # class Point:
 #     def __init__(self, *args):
 #         self.__coord = args
@@ -392,8 +392,8 @@
 #
 # p = Point(5, 7)
 # print(len(p))
-
-
+#
+#
 # import math
 #
 # class Point:
@@ -418,8 +418,8 @@
 # print(pt.length)
 # pt.z = 3
 # print(pt.__dict__)
-
-
+#
+#
 # class Point:
 #
 #     __slots__ = ("x", "y", "__length")
@@ -442,10 +442,10 @@
 # # pt3.z = 30
 # print(pt3.x, pt3.y, pt3.z)
 # # print(pt3.__dict__)
-
-
+#
+#
 # Функторы
-
+#
 # class Counter:
 #     def __init__(self):
 #         self.__counter = 0
@@ -464,8 +464,8 @@
 # c2()
 # c2()
 # c1()
-
-
+#
+#
 # class StripChars:
 #     def __init__(self, chars):
 #         self.__chars = chars
@@ -493,11 +493,11 @@
 #
 # s1 = strip_chars("!@#$%^&* ")
 # print(s1(" Hello word!"))
-
-
+#
+#
 # Класс как декоратор
-
-
+#
+#
 # class MyDecorator:
 #     def __init__(self, fn):
 #         self.func = fn
@@ -506,8 +506,8 @@
 #         print('перед вызовом функции')
 #         self.func()
 #         print('после вызова функции')
-
-
+#
+#
 # def MyDecorator(fn):
 #     def wrap():
 #         print('перед вызовом функции')
@@ -523,16 +523,16 @@
 #
 #
 # func()
-
-
+#
+#
 # class Power:
 #     def __init__(self, fn):
 #         self.fn = fn
 #
 #     def __call__(self, *args, **kwargs):
 #         return self.fn(*args, **kwargs) ** 2
-
-
+#
+#
 # @Power
 # def fn(a, b):
 #     return a * b
@@ -545,8 +545,8 @@
 #
 # print(fn(2, 3))
 # print((fn1(2, 5, 2)))
-
-
+#
+#
 # class Power:
 #     def __init__(self, arg):
 #         self.name = arg
@@ -566,11 +566,11 @@
 #
 #
 # fn(2, 5)
-
-
+#
+#
 # Декорирование методов
-
-
+#
+#
 # def dec(fn):
 #     def wrap(*args, **kwargs):
 #         print("*" * 20)
@@ -592,11 +592,11 @@
 #
 # p1 = Person("Виталий", "Карасев")
 # p1.info()
-
-
+#
+#
 # Дескрипторы
 # __get__, __set__, __delete__
-
+#
 # class StringD:
 #     def __init__(self, value=None):
 #         if value:
@@ -634,8 +634,8 @@
 # p = Person("Ivan", "Petrov")
 # p.name.set("Ashot")
 # print(p.name.get(), p.surname.get())
-
-
+#
+#
 # class ValidateString:
 #     def __set_name__(self, owner, name):
 #         self.__name = name
@@ -663,11 +663,11 @@
 # p.surname = "Sidor"
 # print(p.name)
 # print(p.surname)
-
-
+#
+#
 # 75 Пара Дескрипторы
-
-
+#
+#
 # class NonNegative:
 #     def __set_name__(self, owner, name):
 #         self.name = name
@@ -698,8 +698,8 @@
 # print(a.total())
 # a.price = 20
 # print(a.total())
-
-
+#
+#
 # class Integer:
 #     @staticmethod
 #     def verify_coord(coord):
@@ -715,8 +715,8 @@
 #     def __set__(self, instance, value):
 #         self.verify_coord(value)
 #         instance.__dict__[self.name] = value
-
-
+#
+#
 # class Integer:
 #     @staticmethod
 #     def verify_coord(coord):
@@ -753,8 +753,8 @@
 # p1 = Point3D(1, 2, 3)
 # del p1.x
 # print(p1.__dict__)
-
-
+#
+#
 # class Point:
 #     def __init__(self, x, y):
 #         self.x = x
@@ -768,8 +768,8 @@
 # print(p1.__dict__)
 # print(p1.x)
 # print(hasattr(p1, "z"))
-
-
+#
+#
 # class Integer:
 #
 #     def __set_name__(self, owner, name):
@@ -794,11 +794,11 @@
 # p1 = Point3D(1, 2, 3)
 # print(p1.__dict__)
 # print(p1.y)
-
-
+#
+#
 # ======================================================
 # Создание модулей
-
+#
 # import geometry.rect
 # import geometry.sq
 # import geometry.trian
@@ -818,11 +818,11 @@
 #
 # for i in shape:
 #     print(i.get_perimetr())
-
-
+#
+#
 # ======================================================
 # 77 пара
-
+#
 # from car import electrocar
 #
 #
@@ -834,12 +834,12 @@
 #
 # if __name__ == '__main__':
 #     run()
-
-
+#
+#
 # ======================================================
 # Упаковка данных, Кодирование,  Декодирование
-
-
+#
+#
 # import pickle
 #
 #
@@ -859,8 +859,8 @@
 #     shop = pickle.load(fh)
 #
 # print(shop)
-
-
+#
+#
 # ======================================================
 # import pickle
 #
@@ -883,8 +883,8 @@
 #
 # l_obj = pickle.loads(my_obj)
 # print(f"Десериализация в строку:\n{l_obj}\n")
-
-
+#
+#
 # ======================================================
 # import pickle
 #
@@ -914,11 +914,11 @@
 # item3 = pickle.loads(item2)
 # print(item3.__dict__)
 # print(item3)
-
-
+#
+#
 # ======================================================
 # JSON
-
+#
 # import json
 #
 #
@@ -928,9 +928,9 @@
 #     'age': 20,
 #     'children': [{'firstname': 'Alice', 'age': 5}, {'firstname': 'Bob', 'age': 8}]
 # }
-
+#
 # Сохранение в файл-------------------------------
-
+#
 # with open('data_file.json', 'w') as fw:
 #     json.dump(data, fw, indent=4)
 #
@@ -938,17 +938,17 @@
 # with open('data_file.json', 'r') as fw:
 #     data = json.load(fw)
 #     print(data)
-
+#
 # Сохранение в переменную--------------------------
-
+#
 # json_string = json.dumps(data, ensure_ascii=False)
 # print(json_string)
 # data = json.loads(json_string)
 # print(data)
-
-
+#
+#
 # ======================================================
-
+#
 # import json
 # from random import choice
 #
@@ -983,9 +983,9 @@
 #
 # for i in range(5):
 #     write_json(get_person())
-
+#
 # ======================================================
-
+#
 # import json
 #
 #
@@ -1104,10 +1104,10 @@
 # st1.edit_mark(1, 5)
 # print(st1)
 # print(st1.aver_mark())
-
-
+#
+#
 # ======================================================
-
+#
 # import requests
 # import json
 #
@@ -1152,7 +1152,7 @@
 #     is_complete = todo['completed']
 #     has_max_count = str(todo['userId']) in users
 #     return is_complete and has_max_count
-
+#
 #
 # with open('filtered_dada_file.json', 'w') as file:
 #     filtered_todos = list(filter(keep, todos))
@@ -1161,14 +1161,14 @@
 # with open('filtered_dada_file.json', 'r') as file:
 #     data = json.load(file)
 #     print(data)
-
-
+#
+#
 # ======================================================
-
+#
 # csv (Comma Separated Values) Переменные, разделенный запятыми
-
+#
 # import csv
-
+#
 # with open('data.csv', 'r', encoding='utf-8') as r_file:
 #     file_reader = csv.reader(r_file, delimiter=';')
 #     count = 0
@@ -1179,11 +1179,11 @@
 #             print(f"   {row[0]} - {row[1]}. Родился в {row[2]} году")
 #         count += 1
 #     print(f"Всего в файлу {count} строки.")
-
-
+#
+#
 # ======================================================
 # метод csv.DictReader()
-
+#
 # with open('data.csv', 'r', encoding='utf-8') as r_file:
 #     field_names = ['Имя', 'Профессия', 'Год рождения']
 #     file_reader = csv.DictReader(r_file, delimiter=';', fieldnames=field_names)
@@ -1195,18 +1195,18 @@
 #         print(f"   {row['Имя']} - {row['Профессия']}. Родился в {row['Год рождения']} году")
 #         count += 1
 #     print(f"Всего в файлу {count} строки.")
-
-
+#
+#
 # with open('student.csv', mode='w') as file:
 #     writer = csv.writer(file, delimiter=';', lineterminator="\r")
 #     writer.writerow(['Имя', "Класс", "Возраст"])
 #     writer.writerow(['Женя', "9", "15"])
 #     writer.writerow(['Саша', "5", "12"])
-
-
+#
+#
 # ======================================================
 # метод csv.writer()
-
+#
 # data = [['hostname', 'vendor', 'model', 'location'],
 #         ['sw1', 'Cisco', '3750', 'London, Best str'],
 #         ['sw2', 'Cisco', '3850', 'Liverpool, Better str'],
@@ -1221,13 +1221,13 @@
 #
 # with open('data_sw.csv') as file:
 #     print(file.read())
-
-
+#
+#
 # ======================================================
 # Метод csv.DictWriter()
-
+#
 # import csv
-
+#
 # with open('stud.csv', 'w') as file:
 #     names = ['Имя', 'Возраст']
 #     file_writer = csv.DictWriter(file, delimiter=';', lineterminator='\r', fieldnames=names)
@@ -1235,10 +1235,10 @@
 #     file_writer.writerow({"Имя": "Саша", "Возраст": "6"})
 #     file_writer.writerow({"Имя": "Маша", "Возраст": "15"})
 #     file_writer.writerow({"Имя": "Вова", "Возраст": "14"})
-
-
+#
+#
 # ======================================================
-
+#
 # data = [{
 #     'hostname': 'sw1',
 #     'location': 'London',
@@ -1260,85 +1260,85 @@
 #     'model': '3650',
 #     'vendor': 'Cisco'
 # }]
-
-
+#
+#
 # with open('dictwriter.csv', 'w') as file:
 #     writer = csv.DictWriter(file, delimiter=';', lineterminator='\r', fieldnames=list(data[0].keys()))
 #     writer.writeheader()
 #     for d in data:
 #         writer.writerow(d)
-
-
+#
+#
 # ======================================================
 # Парсинг
-
+#
 # from bs4 import BeautifulSoup
 # import re
-
-
+#
+#
 # def get_copywriter(tag):
 #     whois = tag.find("div", class_="whois").text.strip()
 #     if "Copywriter" in whois:
 #         return tag
 #     return None
-
+#
 # def get_salary(s):
 #     pattern = r"\d+"
 #     res = re.findall(pattern, s)[0]
 #     res = re.search(pattern, s).group()
 #     print(res)
-
-
+#
+#
 # f = open('index.html', encoding='utf-8').read()
 # soup = BeautifulSoup(f, "html.parser")
-
+#
 # salary = soup.find_all("div", {"data-set": "salary"})
 # for i in salary:
 #     get_salary(i.text)
-
-
+#
+#
 # copywriter = []
 # row = soup.find_all('div', class_="row")
 # for i in row:
 #     cw = get_copywriter(i)
 #     if cw:
 #         copywriter.append(cw)
-
+#
 # print(copywriter)
-
+#
 # row = soup.find('div', class_="name").text
 # row = soup.find_all('div', class_="name")
 # print(row)
-
+#
 # row = soup.find_all("div", class_="row")[1].find("div", class_="links")
 # print(row)
-
+#
 # row = soup.find_all("div", {"data-set": "salary"})
 # print(row)
-
+#
 # row = soup.find("div", string="Alena").parent.parent
 # row = soup.find("div", string="Alena").find_parent(class_="row")
 # print(row)
-
+#
 # row = soup.find("div", id="whois3")  # Текущий элемент
 # print(row)
 # row = soup.find("div", id="whois3").find_next_sibling()  # Следующий элемент
 # print(row)
 # row = soup.find("div", id="whois3").find_previous_sibling()  # Пред идущий элемент
 # print(row)
-
-
+#
+#
 # ======================================================
 # Парсинг с сайта
-
+#
 # import requests
-
+#
 # r = requests.get("https://ru.wordpress.org/")
 # print(r.headers)
 # print(r.headers['Content-Type'])
 # print(r.content)
 # print(r.text)
-
+#
 # import requests
 # from bs4 import BeautifulSoup
 #
@@ -1361,8 +1361,8 @@
 #
 # if __name__ == '__main__':
 #     main()
-
-
+#
+#
 # ======================================================
 # import csv
 # import requests
@@ -1407,8 +1407,8 @@
 #
 # if __name__ == '__main__':
 #     main()
-
-
+#
+#
 # ======================================================
 # import csv
 # import requests
@@ -1478,7 +1478,7 @@
 # if __name__ == '__main__':
 #     main()
 #
-
+#
 # ======================================================
 # from parsers import Parser
 #
@@ -1490,8 +1490,8 @@
 #
 # if __name__ == '__main__':
 #     main()
-
-
+#
+#
 # import sqlite3 as sq
 #
 # # con = sq.connect('profile.db')
@@ -1513,11 +1513,11 @@
 #     summa REAL,
 #     data BLOB
 #     )""")
-
+#
 #     # удаление таблицы из базы
 #     cur.execute('DROP TABLE users')
-
-
+#
+#
 # ======================================================
 # РАБОТА С БАЗОЙ ДАННЫХ
 # import sqlite3 as sq
@@ -1563,8 +1563,8 @@
 #     cur.execute("""
 #     DROP TABLE person_table
 #     """)
-
-
+#
+#
 # ======================================================
 # import sqlite3 as sq
 #
@@ -1584,8 +1584,344 @@
 #
 #     # for res in cur:
 #     #     print(res)
-
-
+#
+#
 # ======================================================
-# Проектирование базы данных
+# import sqlite3 as sq
+#
+# cars = [
+#     ('BMW', 54000),
+#     ('Chevrolet', 56700),
+#     ('Daewoo', 23000),
+#     ('Citroen', 85400),
+#     ('Honda', 33400),
+#
+# ]
+#
+# with sq.connect('cars.db') as con:
+#     cur = con.cursor()
+#     cur.execute("""
+#     CREATE TABLE IF NOT EXISTS cars(
+#     car_id integer primary key autoincrement,
+#     model TEXT,
+#     price INTEGER
+#     )
+#     """)
+#
+#     cur.executescript("""
+#     DELETE FROM cars WHERE model LIKE 'B%';
+#     UPDATE cars SET price = price + 100
+#     """)
+#
+#     cur.execute("UPDATE cars SET price = :Price WHERE model LIKE 'B%'", {'Price': 0})
+#
+#     1-й способ добавление в базу
+#     cur.executemany("INSERT INTO cars VALUES(NULL, ?, ?)", cars)
+#
+#     2-й способ добавление в базу
+#     for car in cars:
+#         cur.execute("INSERT INTO cars VALUES(NULL, ?, ?)", car)
+#
+#     cur.execute("INSERT INTO cars VALUES(1, 'Renault', 20000)")
+#     cur.execute("INSERT INTO cars VALUES(2, 'Volvo', 44400)")
+#     cur.execute("INSERT INTO cars VALUES(3, 'Mercedes', 34560)")
+#     cur.execute("INSERT INTO cars VALUES(4, 'Bentley', 23440)")
+#     cur.execute("INSERT INTO cars VALUES(5, 'Audi', 26700)")
+#
+#
+# con.commit()
+# con.close()
+#
+#
+# with sq.connect('cars.db') as con:
+#     con.row_factory = sq.Row
+#     cur = con.cursor()
+#     cur.execute("""
+#     CREATE TABLE IF NOT EXISTS cars(
+#     car_id integer primary key autoincrement,
+#     model TEXT,
+#     price INTEGER
+#     )
+#     """)
+#
+#     cur.execute("SELECT model, price "
+#                 "FROM cars")
+#
+#     # rows = cur.fetchall()
+#     # rows = cur.fetchone()
+#     # rows = cur.fetchmany(5)
+#     # print(rows)
+#
+#     for res in cur:
+#         print(res['model'], res['price'])
+#
+#
+# ======================================================
+#
+# def read_ava(n):
+#     try:
+#         with open(f"{n}.png", 'rb') as f:
+#             return f.read()
+#     except IOError as e:
+#         print(e)
+#         return False
+#
+#
+# with sq.connect('cars.db') as con:
+#     con.row_factory = sq.Row
+#     cur = con.cursor()
+#
+#     cur.execute("""
+#     CREATE TABLE IF NOT EXISTS users(
+#         user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+#         ava BLOB
+#     )
+#     """)
+#
+#     img = read_ava(1)
+#     if img:
+#         binary = sq.Binary(img)
+#         cur.execute("INSERT INTO users VALUES (?, ?)", (1, binary))
+#
+#
+# ===================================================
+# дамп базы данных в файл
+#
+# with sq.connect('cars.db') as con:
+#     cur = con.cursor()
+#
+#     with open("sql_dump.sql", 'w') as file:
+#         for sql in con.iterdump():
+#             file.write(sql)
+#
+#
+# ===================================================
+# восстановление базы из файла
+#
+# with sq.connect('cars.db') as con:
+#     cur = con.cursor()
+#
+#     with open("sql_dump.sql", 'r') as file:
+#         sql = file.read()
+#         cur.executescript(sql)
+#
+#
+# ===================================================
+# Шаблонизатор (Jinja)
+#
+# from jinja2 import Template
+#
+# name = "Игорь"
+# age = 28
+# per = {'name': 'Игорь', 'age': 28}
+#
+#
+# class Person:
+#     def __init__(self, name, age):
+#         self.__name = name
+#         self.__age = age
+#
+#     def get_name(self):
+#         return self.__name
+#
+#     def get_age(self):
+#         return self.__age
+#
+#
+# per = Person("Игорь", 26)
+#
+# tm = Template("Мне {{ p.get_age() }} лет. Меня зовут {{ p.get_name() }}.")
+# msg = tm.render(p=per)
+#
+# print(msg)
+#
+#
+# ===================================================
+# Шаблонизатор (Jinja)
+# from jinja2 import Template
+#
+# cities = [
+#     {'id': 1, 'city': 'Москва'},
+#     {'id': 2, 'city': 'Смоленск'},
+#     {'id': 3, 'city': 'Минск'},
+#     {'id': 4, 'city': 'Ярославль'},
+#     {'id': 5, 'city': 'Уфа'},
+# ]
+#
+# link = """<select name='cities'>
+# {% for c in cities -%}
+# {% if c.id > 3 -%}
+#     <option value="{{ c['id'] }}"><option>{{ c['city'] }}</option>
+# {% elif c.city == 'Москва' -%}
+#     <option>{{ c.city }}</option>
+# {% else -%}
+#     {{ c['city'] }}
+# {% endif -%}
+# {% endfor -%}
+# </select>"""
+#
+# tm = Template(link)
+# msg = tm.render(cities=cities)
+# print(msg)
+#
+# ===================================================
+# Шаблонизатор (Jinja)
+# from jinja2 import Template
+#
+# links = [
+#     {'href': '/index', 'text': 'Главная'},
+#     {'href': '/news', 'text': 'Новости'},
+#     {'href': '/about', 'text': 'О компании'},
+#     {'href': '/shop', 'text': 'Магазин'},
+#     {'href': '/contacts', 'text': 'Контакты'}
+# ]
+#
+# link = """<ul>
+# {% for c in links -%}
+# {% if c.text == 'Главная' -%}
+#     <li><a href="{{ c.href }} class="active">{{ c.text }}</a></li>
+# {% else -%}
+#     <li><a href="{{ c.href }}>{{ c.text }}</a></li>
+# {% endif -%}
+# {% endfor -%}
+# </ul>"""
+#
+# tm = Template(link)
+# msg = tm.render(links=links)
+# print(msg)
+#
+# ===================================================
+# Шаблонизатор (Jinja)
+# from jinja2 import Template
+#
+# cars = [
+#     {'model': 'Audi', 'price': 23000},
+#     {'model': 'Skoda', 'price': 17300},
+#     {'model': 'Renault', 'price': 44300},
+#     {'model': 'Wolksvagen', 'price': 21300}
+# ]
+#
+# фильтры
+# tp1 = "Суммарная цена автомобилей {{ cs | sum(attribute='price') }}"
+# tp1 = "Суммарная цена автомобилей {{ (cs | min(attribute='price')).model }}"
+# tp1 = "{{ cs | replace('model', 'brand') }}"
+# tm = Template(tp1)
+# msg = tm.render(cs=cars)
+# print(msg)
+#
+#
+# ===================================================
+# Шаблонизатор (Jinja)
+# from jinja2 import Template
+#
+# Макроопределение
+# html = """
+# {% macro input(name, value='', type='text', size=20) %}
+#     <input type='{{ type }}' name='{{ name }}' value='{{ value }}' size='{{ size }}'>
+# {% endmacro %}
+#
+# <p>{{ input('username', 'Ann') }}</p>
+# <p>{{ input('email') }}</p>
+# <p>{{ input('password', type='password') }}</p>
+# """
+# tm = Template(html)
+# msg = tm.render()
+#
+# print(msg)
+#
+#
+# ===================================================
+# Шаблонизатор (Jinja)
+# from jinja2 import Template
+#
+# Макроопределение
+# html = """
+# {% macro input(name='', placeholder='', type='text') -%}
+#     <input type='{{ type }}' name='{{ name }}' placeholder="{{placeholder }}">
+# {%- endmacro -%}
+#
+# <p>{{ input('firstname', 'Имя') }}</p>
+# <p>{{ input('lastname', 'Фамилия') }}</p>
+# <p>{{ input('address', 'Адрес') }}</p>
+# <p>{{ input('phone', 'Телефон', type='tel') }}</p>
+# <p>{{ input('email', 'Почта', type='email') }}</p>
+# """
+#
+# tm = Template(html)
+# msg = tm.render()
+#
+# print(msg)
+#
+#
+# ===================================================
+# Шаблонизатор (Jinja)
+# from jinja2 import Template
+#
+# persons = [
+#     {"name": "Алексей", "year": 18, "weight": 78.5},
+#     {"name": "Никита", "year": 28, "weight": 82.3},
+#     {"name": "Виталий", "year": 33, "weight": 94.0}
+# ]
+#
+# вложенные элементы
+# html = """
+# {% macro list_users(list_of_users) %}
+# <ul>
+# {% for u in list_of_users -%}
+#     <li>{{ u.name }} {{ caller(u) }}</li>
+# {% endfor -%}
+# </ul>
+# {% endmacro %}
+#
+# {% call(user) list_users(users) %}
+#     <ul>
+#         <li>{{ user.year }}</li>
+#         <li>{{ user.weight }}</li>
+#     </ul>
+# {% endcall %}
+# """
+#
+# tm = Template(html)
+# msg = tm.render(users=persons)
+#
+# print(msg)
+#
+#
+# ===================================================
+# Шаблонизатор (Jinja)
+# from jinja2 import Environment, FileSystemLoader
+#
+# persons = [
+#     {"name": "Алексей", "year": 18, "weight": 78.5},
+#     {"name": "Никита", "year": 28, "weight": 82.3},
+#     {"name": "Виталий", "year": 33, "weight": 94.0}
+# ]
+#
+# subs = ['Культура', 'Наука', 'Политика', 'Спорт']
+#
+# file_loader = FileSystemLoader('templates')
+# env = Environment(loader=file_loader)
+#
+# tm = env.get_template('about.html')
+# msg = tm.render(users=persons, title='About Jinja')
+#
+# print(msg)
 
+
+# ===================================================
+# Шаблонизатор (Jinja)
+# from jinja2 import Environment, FileSystemLoader
+#
+# subs = ['Культура', 'Наука', 'Политика', 'Спорт']
+#
+# file_loader = FileSystemLoader('templates')
+# env = Environment(loader=file_loader)
+#
+# tm = env.get_template('about.html')
+# msg = tm.render(list_table=subs)
+#
+# print(msg)
+
+
+# ===================================================
+# микрофреймверк Flask

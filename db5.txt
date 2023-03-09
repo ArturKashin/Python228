@@ -73,7 +73,7 @@ FROM ClientGoods cg, SallerGoods sg, Client c, Seller s
 WHERE cg.ID=sg.ID AND c.INNClient=cg.INNClient AND s.INNSeller=sg.INNSeller AND s.Status = "посредник"
 
 8.	Написать запрос, который выводит название товара и прибыль, полученную от его продажи (при продаже всех единиц товара).
-SELECT sg.Goods, sg.CostUnit*sg.Count
+SELECT sg.Goods, round((sg.CostUnit*sg.Count), 2)
 FROM SallerGoods sg
 
 9.	 Определите какие клиенты не покупали подсолнечное масло.
