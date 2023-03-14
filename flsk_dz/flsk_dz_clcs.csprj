@@ -1,0 +1,27 @@
+
+<codestructure version="1.11.1">
+<phptree>
+</phptree>
+<jstree>
+</jstree>
+<pythontree>
+<treenode node="flsite;Python:Python Module;C:\Python_228\flsk_dz\flsite.py;f0;0;0;2147483647;;;;vpos;;v;;a;;rC:\Python_228\flsk_dz\flsite.py;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l">
+<treenode node="Flask;Python:Python Import;C:\Python_228\flsk_dz\flsite.py;f17;0;23;0;;;;vposflask.Flask;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l">
+</treenode>
+<treenode node="about;Python:Python Function;C:\Python_228\flsk_dz\flsite.py;f3;18;0;23;;;;vpos;;v;;a:expr: render_template(&quot;about.html&quot;, title=&quot;Наши направления&quot;, menu=menu)&#10;;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k about();;l">
+</treenode>
+<treenode node="app;Python:Python Variable;C:\Python_228\flsk_dz\flsite.py;f0;2;3;2;;;;vpos:expr: Flask(__name__)&#10;;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l">
+</treenode>
+<treenode node="index;Python:Python Function;C:\Python_228\flsk_dz\flsite.py;f3;12;0;17;;;;vpos;;v;;a:expr: render_template(&quot;index.html&quot;, title=&quot;Главная&quot;, menu=menu)&#10;;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k index();;l">
+</treenode>
+<treenode node="menu;Python:Python Variable;C:\Python_228\flsk_dz\flsite.py;f0;4;4;4;;;;vpos:expr: [{&quot;name&quot;: &quot;Главная&quot;, &quot;url&quot;: &quot;index&quot;},&#10;;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l">
+</treenode>
+<treenode node="render_template;Python:Python Import;C:\Python_228\flsk_dz\flsite.py;f24;0;40;0;;;;vposflask.render_template;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l">
+</treenode>
+<treenode node="request;Python:Python Import;C:\Python_228\flsk_dz\flsite.py;f50;0;58;0;;;;vposflask.request;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l">
+</treenode>
+<treenode node="url_for;Python:Python Import;C:\Python_228\flsk_dz\flsite.py;f41;0;49;0;;;;vposflask.url_for;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l">
+</treenode>
+</treenode>
+</pythontree>
+</codestructure>
