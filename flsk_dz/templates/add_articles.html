@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<h1 class="content_h1">Добавление статьи</h1>
+
+<form class="add_articles_form" action="{{ url_for('add_articles') }}" method="post">
+    <p class="add_articles_form_text">Название статьи: <input type="text" name="name" required></p>
+    <p class="add_articles_form_text">Автор статьи: <input type="text" name="author"></p>
+    <p class="add_articles_form_text">Текст статьи:</p>
+    <p><textarea name="post" cols="40" rows="7"></textarea></p>
+    <p><input class="add_articles_form_text" type="submit" value="Добавить"></p>
+</form>
+
+{% endblock %}

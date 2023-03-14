@@ -1,5 +1,6 @@
 body{
     background: #260c2d;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .container {
 	width: 100%;
@@ -21,13 +22,6 @@ body{
 	box-sizing: border-box;
 	padding-left: 10px;
 	padding-right: 10px;
-}
-img {
-	width: 100%;
-	width: auto;
-	height: auto;
-	object-fit: cover;
-	
 }
 .menu{
 	display: flex;
@@ -56,11 +50,17 @@ img {
 .content_block_text{
 	color: #b3b3b8;
 	font-size: 30px;
-	text-shadow: #191918 2px 0 5px;
 }
 .content_block_img{
 	width: auto;
 	object-fit: cover;
+}
+.add_articles_form{
+    background: #90f9e5;
+    padding: 10px;
+}
+.add_articles_form_text{
+    font-size: 20px;
 }
 
 
