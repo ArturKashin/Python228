@@ -3,7 +3,7 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .container {
-	width: 100%;
+	width: 1200px;
 	padding-right: 15px;
 	padding-left: 15px;
 	margin-right: auto;
@@ -15,6 +15,7 @@ body{
 	display: -ms-flex;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-auto {
 	position: relative;
@@ -46,11 +47,29 @@ body{
 }
 .content_block{
 	text-align: center;
+	width: 30%;
+	margin: 0px 10px 0px 10px;
 }
-.content_block_text{
-	color: #b3b3b8;
-	font-size: 30px;
+.content_block_name, .content_block_author, .content_block_text{
+    background: #c0c6e5;
+    border-radius: 10px;
+    margin: 3px auto;
+    padding: 25px;
 }
+.content_block_submit{
+    width: 100%;
+    border-radius: 10px;
+    background: #8695e4;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.content_block_submit:hover{
+    color: #CE242B; /* Цвет ссылки при наведении */
+    text-decoration: underline; /* Добавляем подчёркивание */
+}
+
 .content_block_img{
 	width: auto;
 	object-fit: cover;
@@ -61,6 +80,19 @@ body{
 }
 .add_articles_form_text{
     font-size: 20px;
+}
+.flash{
+    padding:10px;
+}
+
+.flash.success{
+    border: 1px solid #21BD56;
+    background: #AEFFC5;
+}
+
+.flash.error{
+    border: 1px solid #FF4343;
+    background: #FF9C9C;
 }
 
 

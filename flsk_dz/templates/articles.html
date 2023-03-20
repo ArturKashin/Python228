@@ -5,18 +5,17 @@
 {{ super() }}
 <h1 class="content_h1">Куда поехать</h1>
 <div class="container">
-    <div class="row content">
-        <div class="col-4 content_block">
-            <p class="content_block_text">Горы</p>
-        </div>
+    <div class="row content_text">
 
-        <div class="col-4 content_block">
-            <p class="content_block_text">Море</p>
+        {% for p in posts %}
+        <div class="content_block">
+            <p class="content_block_name">{{ p.name }}</p>
+            <h3 class="content_block_author">{{ p.author }}</h3>
+            <p class="content_block_text">{{ p.text[:250] }}</p>
+            <a href="{{ url_for('show_post', id_post=p.id) }}"><input class="content_block_submit" type="submit" name="Полный текст"  value="Полная статья"></a>
         </div>
+        {% endfor %}
 
-        <div class="col-4 content_block">
-            <p class="content_block_text">Природа</p>
-        </div>
     </div>
 </div>
 {% endblock %}

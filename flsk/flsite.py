@@ -46,8 +46,7 @@ menu = [{"name": "Главная", "url": "index"},
 def index():
     db = get_db()
     dbase = FDataBase(db)
-    print(url_for('index'))
-    return render_template("index.html", title="Главная", menu=dbase.get_menu())
+    return render_template("index.html", title="Главная", menu=dbase.get_menu(), posts=dbase.get_posts_announce())
 
 
 @app.route("/add_post", methods=["POST", "GET"])
@@ -66,6 +65,17 @@ def add_post():
             flash("Ошибка добавления статьи", category="error")
 
     return render_template("add_post.html", title="Добавление статьи", menu=dbase.get_menu())
+
+
+@app.route("/post/<int:id_post>")
+def show_post(id_post):
+    db = get_db()
+    dbase = FDataBase(db)
+    title, post = dbase.get_post(id_post)
+    if not title:
+        abort(404)
+
+    return render_template('post.html', title=title, post=post, menu=dbase.get_menu())
 
 
 @app.route("/about")
